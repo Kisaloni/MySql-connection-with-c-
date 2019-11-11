@@ -8,7 +8,7 @@ int main()
     cout << "Hello world!" << endl;
     MYSQL *conn;
     conn=mysql_init(0);
-    conn=mysql_real_connect(conn,"localhost","root","K11@mysqltoor","hello_world",0, NULL,0);
+    conn=mysql_real_connect(conn,"localhost","root","PASSWORD","DB_NAME",0, NULL,0);
     if(conn)
     {
         printf("Connected");
