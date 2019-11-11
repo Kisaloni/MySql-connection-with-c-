@@ -3,6 +3,8 @@
 #include<mysql.h>
 using namespace std;
 
+void exeQuery(MYSQL *conn);
+
 int main()
 {
     cout << "Hello world!" << endl;
@@ -12,10 +14,19 @@ int main()
     if(conn)
     {
         printf("Connected");
+        exeQuery(conn);
     }
     else
     {
         printf("Not Connected");
     }
     return 0;
+}
+
+
+void exeQuery(MYSQL *conn)
+{
+    string q="create table my_table(name varchar(10),age int)";
+    const char *query=q.c_str();
+    mysql_query(conn,query);
 }
